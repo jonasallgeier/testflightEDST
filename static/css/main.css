@@ -1,0 +1,302 @@
+/* lato-regular - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/lato-v17-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/lato-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/lato-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/lato-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/lato-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/lato-v17-latin-regular.svg#Lato') format('svg'); /* Legacy iOS */
+}
+
+/* lato-italic - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/lato-v17-latin-italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/lato-v17-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/lato-v17-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/lato-v17-latin-italic.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/lato-v17-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/lato-v17-latin-italic.svg#Lato') format('svg'); /* Legacy iOS */
+}
+
+/* lato-700 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/lato-v17-latin-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/lato-v17-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/lato-v17-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/lato-v17-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/lato-v17-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/lato-v17-latin-700.svg#Lato') format('svg'); /* Legacy iOS */
+}
+
+/* lato-900 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/lato-v17-latin-900.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/lato-v17-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/lato-v17-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/lato-v17-latin-900.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/lato-v17-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/lato-v17-latin-900.svg#Lato') format('svg'); /* Legacy iOS */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+
+/* Header/logo Title */
+.header {
+  padding: 10px 0px 0px 0px;
+  text-align: center;
+  background: #21618C;
+  color: white;
+}
+
+.header h1 {
+    font-family: Lato;
+}
+
+.sepLine {
+  background-color: #133953;
+  height: 15px;
+}
+
+/* Column container */
+.row {  
+  display: flex;
+  /*flex-wrap: wrap;*/
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 25%;
+  background-color: white;
+  padding: 20px;
+  border-right: 4px dotted #262626;
+  border-bottom: 0px dotted #262626;
+}
+
+/* Main column */
+.main {
+  flex: 75%;
+  background-color: white;
+  padding: 20px;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #eaf4fa;
+}
+
+.allButFooter {
+    flex: 1 0 auto;
+}
+
+.footer {
+  padding: 0px;
+  text-align: center;
+  background: #21618C;
+  color: white;
+  flex-shrink: 0;
+}
+
+.footer p {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1000px) {
+  .row {   
+    flex-direction: column;
+  }
+  .side {
+    border-bottom: 4px dotted #262626;
+    border-right: 0px dotted #262626;
+  }
+}
+
+.bk-root .bk-btn-primary {
+  color: #FDFEFE;
+  background-color: #21618C;
+  border-color: #21618C;
+  font-weight: bold;
+}
+.bk-root .bk-btn-primary:focus {
+  color: #FDFEFE;
+  background-color: #21618C;
+  border-color: #21618C;
+}
+.bk-root .bk-btn-primary:active {
+  color: #FDFEFE;
+  background-color: #21618C;
+  border-color: #21618C;
+}
+.bk-root .bk-btn-primary:hover {
+  color: #FDFEFE;
+  background-color: #5DADE2;
+  border-color: #5DADE2;
+}
+
+.cryptedmail:after {
+  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld); 
+}
+
+.footer a:link {
+  color:white;
+  text-decoration: none;
+}
+.footer a:visited {
+  color:white;
+  text-decoration: none;
+}
+.footer a:hover {
+  color:#e6e6e6;
+  text-decoration: none;
+}
+.footer a:active {
+  color:#c2c2c2;
+  text-decoration: none;
+}
+
+.accordion {
+  /*background-color: #333;*/
+  background-image: linear-gradient(#b3afb3, #94978e);
+  color: #333;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-weight: normal;
+  transition: 0.1s;
+  text-align: center;
+  border-radius: 14px 14px 14px 14px;
+}
+
+.active {
+  background-image: linear-gradient(#99bb5a, #80a044);
+  color: white;
+}
+
+.accordion:hover {
+  filter: brightness(85%);
+}
+
+.accordion:hover {
+  font-weight: bold;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: #eaf4fa;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.content {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+img.illu {
+  width:auto;
+  max-width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ul.shine {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1
+/*  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);*/
+}
+
+ul.shine li {
+  list-style: none;
+  margin: 0 0px;
+}
+
+ul.shine li a {
+  position: relative; 
+  display: block;
+  width: 2.5em;
+  height: 2.5em;
+  text-align: center;
+  line-height: 2.5em;
+  background: #333;
+  border-radius: 50%;
+  font-size: 4em;
+  color: #d9d9d9;
+  transition: 2s;
+}
+
+ul li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #94c5e6;
+  transition: 1.5s;
+  transition-delay: 0.25s;
+  transform: scale(.9);
+  z-index: -1;
+}
+
+ul li a:hover::before {
+  transition: 1.5s;
+  transition-delay: 0.4s;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #94c5e6;
+}
+
+ul li a:hover {
+  color: #94c5e6;
+}

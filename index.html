@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="static/css/main.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://bungee-project.djr.com/resources/web/bungee.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css" integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/solid.min.css" integrity="sha512-qzgHTQ60z8RJitD5a28/c47in6WlHGuyRvMusdnuWWBB6fZ0DWG/KyfchGSBlLVeqAz+1LzNq+gGZkCSHnSd3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://bungee-project.djr.com/resources/web/bungee.js"></script>
+  <!-- <script src="jquery.min.js"></script> -->
+  <!-- <link rel="stylesheet" href="fontawesome.min.css" /> -->
+  <!-- <link rel="stylesheet" href="solid.min.css"  /> -->
+
+  <script src="bokeh/bokeh-2.4.3.min.js"></script>
+  <script src="bokeh/bokeh-widgets-2.4.3.min.js"></script>
+  <script src="bokeh/bokeh-api-2.4.3.min.js"></script>
+  <script src="bokeh/bokeh-tables-2.4.3.min.js"></script>
+  <script src="bokeh/math.min.js"></script>
+      <script type="text/javascript">
+        (function() {
+  const fn = function() {
+    Bokeh.safely(function() {
+      (function(root) {
+        function embed_document(root) {
+        const docs_json = '{"9af004a8-c642-454d-af42-a4e8ce55770d":{"defs":[],"roots":{"references":[{"attributes":{"end":8.5,"js_property_callbacks":{"change:value":[{"id":"1019"}]},"sizing_mode":"stretch_width","start":6.0,"step":0.1,"title":"pH","value":7.2},"id":"1010","type":"Slider"},{"attributes":{"active":0,"labels":["accessible","restricted","no access"],"sizing_mode":"stretch_width"},"id":"1014","type":"RadioButtonGroup"},{"attributes":{"end":24.0,"js_property_callbacks":{"change:value":[{"id":"1019"}]},"sizing_mode":"stretch_width","start":12.0,"step":0.1,"title":"Temperature","value":17.3},"id":"1011","type":"Slider"},{"attributes":{"options":["halogenated","non-halogenated","PAH","PFAS","PCBs","Cationic Trace Elements","Oxyanionic Trace Elements","Pesticides/Herbicides","Complex Cyanides","Asbestos","Energetic Materials","other"],"sizing_mode":"stretch_width","title":"Contaminant Type","value":"PAH"},"id":"1018","type":"Select"},{"attributes":{"args":{"rG1":{"id":"1013"},"sl1":{"id":"1010"},"sl2":{"id":"1011"},"srcDef":{"id":"1002"},"srcMethods":{"id":"1001"}},"code":"\\nvar methodName      = srcMethods.data[&#x27;methodName&#x27;]\\nvar applicable      = srcMethods.data[&#x27;applicable&#x27;]\\nvar minTemp         = srcDef.data[&#x27;minTemp&#x27;]\\nvar maxTemp         = srcDef.data[&#x27;maxTemp&#x27;]\\nvar minPH           = srcDef.data[&#x27;minPH&#x27;]\\nvar maxPH           = srcDef.data[&#x27;maxPH&#x27;]\\nvar worksAerobic    = srcDef.data[&#x27;worksAerobic&#x27;]\\nvar worksAnaerobic  = srcDef.data[&#x27;worksAnaerobic&#x27;]\\nconst Temperature   = sl2.value\\nconst pH            = sl1.value\\nconst milieu        = rG1.active\\n\\n// go through temperature condition\\nfor (var i = 0; i &lt; minTemp.length; i++) {\\n    var myStr = &#x27;&#x27;\\n    if (Temperature &gt; minTemp[i] &amp;&amp; Temperature &lt; maxTemp[i]) {\\n        myStr += &#x27;x&#x27;\\n    } else {\\n        myStr += &#x27;o&#x27;\\n    }\\n    if (pH &gt; minPH[i] &amp;&amp; pH &lt; maxPH[i]) {\\n        myStr += &#x27;x&#x27;\\n    } else {\\n        myStr += &#x27;o&#x27;\\n    }\\n    if (milieu == 0 &amp;&amp; worksAerobic[i] == \\"yes\\") {\\n        myStr += &#x27;x&#x27;\\n    } else if (milieu == 1 &amp;&amp; worksAnaerobic[i] == \\"yes\\") {\\n        myStr += &#x27;x&#x27;\\n    } else {\\n        myStr += &#x27;o&#x27;\\n    }\\n    applicable[i] = myStr\\n}\\n\\nsrcMethods.data[&#x27;methodName&#x27;] = methodName\\nsrcMethods.data[&#x27;applicable&#x27;] = applicable\\n\\nsrcMethods.change.emit();"},"id":"1019","type":"CustomJS"},{"attributes":{},"id":"1030","type":"StringEditor"},{"attributes":{"children":[{"id":"1014"},{"id":"1011"},{"id":"1010"},{"id":"1018"},{"id":"1016"},{"id":"1012"},{"id":"1013"},{"id":"1015"},{"id":"1017"}],"sizing_mode":"stretch_width"},"id":"1020","type":"Column"},{"attributes":{"editor":{"id":"1031"},"field":"applicable","formatter":{"id":"1003"},"title":"Applicability"},"id":"1005","type":"TableColumn"},{"attributes":{},"id":"1024","type":"Selection"},{"attributes":{},"id":"1029","type":"StringFormatter"},{"attributes":{},"id":"1031","type":"StringEditor"},{"attributes":{"editor":{"id":"1030"},"field":"methodName","formatter":{"id":"1029"},"title":"Method"},"id":"1004","type":"TableColumn"},{"attributes":{"source":{"id":"1001"}},"id":"1009","type":"CDSView"},{"attributes":{},"id":"1021","type":"UnionRenderers"},{"attributes":{"end":-2,"sizing_mode":"stretch_width","start":-9,"step":0.1,"title":"Hydraulic Conductivity (log10)","value":-4},"id":"1012","type":"Slider"},{"attributes":{"active":0,"labels":["fractured","alluvial/porous"],"sizing_mode":"stretch_width"},"id":"1017","type":"RadioButtonGroup"},{"attributes":{"columns":[{"id":"1004"},{"id":"1005"}],"index_position":null,"sizing_mode":"stretch_width","source":{"id":"1001"},"view":{"id":"1009"}},"id":"1007","type":"DataTable"},{"attributes":{"active":0,"labels":["saturated","unsaturated"],"sizing_mode":"stretch_width"},"id":"1015","type":"RadioButtonGroup"},{"attributes":{},"id":"1023","type":"UnionRenderers"},{"attributes":{"data":{"index":[0,1,2,3],"ini":["xxx","xoo","xxx","oox"],"maxPH":{"__ndarray__":"mpmZmZmZH0AAAAAAAAAeQM3MzMzMzCBAAAAAAAAAIUA=","dtype":"float64","order":"little","shape":[4]},"maxTemp":{"__ndarray__":"mpmZmZmZN0DNzMzMzEw2QJqZmZmZGTZAmpmZmZkZMUA=","dtype":"float64","order":"little","shape":[4]},"methodName":["Electro-Nano-Bioremediation","Bioaugmentation","Bioelectrochemcial Remediation","Enhanced Phytoremediation"],"minPH":{"__ndarray__":"zczMzMzMGECamZmZmZkdQDMzMzMzMxtAMzMzMzMzIEA=","dtype":"float64","order":"little","shape":[4]},"minTemp":{"__ndarray__":"MzMzMzMzMUAzMzMzMzMqQAAAAAAAAChAAAAAAAAAKEA=","dtype":"float64","order":"little","shape":[4]},"worksAerobic":["yes","no","yes","yes"],"worksAnaerobic":["no","yes","yes","yes"]},"selected":{"id":"1024"},"selection_policy":{"id":"1023"}},"id":"1002","type":"ColumnDataSource"},{"attributes":{"active":0,"js_property_callbacks":{"change:active":[{"id":"1019"}]},"labels":["aerobic","anaerobic"],"sizing_mode":"stretch_width"},"id":"1013","type":"RadioButtonGroup"},{"attributes":{},"id":"1022","type":"Selection"},{"attributes":{"active":0,"labels":["plume","residual","pool","sorbed"],"sizing_mode":"stretch_width"},"id":"1016","type":"RadioButtonGroup"},{"attributes":{"template":"&lt;span style=\\"font-weight: bold; color:&lt;%= \\n                (function colorfromint(){\\n                    if (applicable[0] == \\"x\\")\\n                        {return(&#x27;#85ba22&#x27;)}\\n                    else \\n                        {return(&#x27;#ba4d22&#x27;)}\\n                    }()) %&gt;;\\"&gt;\\n                &amp;#9608;\\n            &lt;/span&gt;\\n&lt;span style=\\"font-weight: bold; color:&lt;%= \\n                (function colorfromint(){\\n                    if (applicable[1] == \\"x\\")\\n                        {return(&#x27;#85ba22&#x27;)}\\n                    else \\n                        {return(&#x27;#ba4d22&#x27;)}\\n                    }()) %&gt;;\\"&gt;\\n                &amp;#9608;\\n            &lt;/span&gt;\\n&lt;span style=\\"font-weight: bold; color:&lt;%= \\n                (function colorfromint(){\\n                    if (applicable[2] == \\"x\\")\\n                        {return(&#x27;#85ba22&#x27;)}\\n                    else \\n                        {return(&#x27;#ba4d22&#x27;)}\\n                    }()) %&gt;;\\"&gt;\\n                &amp;#9608;\\n            &lt;/span&gt;"},"id":"1003","type":"HTMLTemplateFormatter"},{"attributes":{"data":{"applicable":["xxx","xoo","xxx","oox"],"methodName":["Electro-Nano-Bioremediation","Bioaugmentation","Bioelectrochemcial Remediation","Enhanced Phytoremediation"]},"selected":{"id":"1022"},"selection_policy":{"id":"1021"}},"id":"1001","type":"ColumnDataSource"}],"root_ids":["1020","1007"]},"title":"Bokeh Application","version":"2.4.3"}}';
+        const render_items = [{"docid":"9af004a8-c642-454d-af42-a4e8ce55770d","root_ids":["1020","1007"],"roots":{"1007":"dfbe45f7-e721-4b74-a489-728481d5b124","1020":"e924eea1-8d8e-4fad-b388-c80fb8e4007d"}}];
+        root.Bokeh.embed.embed_items(docs_json, render_items);
+        }
+        if (root.Bokeh !== undefined) {
+          embed_document(root);
+        } else {
+          let attempts = 0;
+          const timer = setInterval(function(root) {
+            if (root.Bokeh !== undefined) {
+              clearInterval(timer);
+              embed_document(root);
+            } else {
+              attempts++;
+              if (attempts > 100) {
+                clearInterval(timer);
+                console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+              }
+            }
+          }, 10, root)
+        }
+      })(window);
+    });
+  };
+  if (document.readyState != "loading") fn();
+  else document.addEventListener("DOMContentLoaded", fn);
+})();
+    </script>
+
+  <script src="themodel.js"></script>
+  <link rel="shortcut icon" href="static/favicon.ico">
+  <title>EDST</title>
+</head>
+<body>
+  <div class="allButFooter"> 
+    <div class="header">
+      <a href="#" onclick="initialState()">
+        <figure class="bungee regular-ffffff inline-133953 shade-133953 sign-247082 horizontal background-21618C alt-l" style="font-size: 45px; padding: 10px 0px 0px 0px;">
+          EDST
+        </figure>
+      </a>
+      <h3>A decision support tool.</h3>
+      <div class="sepLine"></div>
+    </div>
+
+    <div class="content"> <!-- style="width: 75%; margin:auto; min-width: 400px;" -->
+      <button class="accordion" id="problem"><i class="fas fa-draw-polygon"></i>  <span style="min-width: 10em; display: inline-block">Problem Description</span></button>
+      <section class="panel">
+        <div class="row">
+          <div class="side" style="flex: 35%; text-align: center; display: flex; align-items: center; justify-content: center;">
+            <img class="illu" style=" box-shadow: none;" src="static/images/logo.jpg" alt="Sketch of Simplified Aquifer">
+          </div>
+          <div class="main" style="flex: 65%">
+            <p> This website provides an <b>interactive</b> tool to figure out which remediation tool to use under various conditions. Here are some explanations:</p>
+            <ul>
+              <li>something</li>
+              <li>placeholder</li>
+              <li>more text</li>
+              <li>explanation</li>
+            </ul>
+            <b>Remediation</b> is of course important.
+          </div>
+        </div>
+      </section>
+
+      <button class="accordion" id="tool"><i class="fas fa-sliders-h"></i>  <span style="min-width: 10em; display: inline-block">Interactive Tool</span></button>
+      <section class="panel">
+        <div class="row">
+          <div class="side" style="flex: 30%">
+            <div class="bk-root" id="e924eea1-8d8e-4fad-b388-c80fb8e4007d" data-root-id="1020"></div>
+          </div>
+          <div class="main" style="flex: 70%">
+            <div class="bk-root" id="dfbe45f7-e721-4b74-a489-728481d5b124" data-root-id="1007"></div>
+          </div>
+        </div>
+      </section>
+
+      <button class="accordion" id="privacy"><i class="fas fa-shield-alt"></i>  <span style="min-width: 10em; display: inline-block">Privacy Policy</span></button>
+      <section class="panel">
+        <div class="row" >
+          <div class="main" style="flex: 100%; background-color: white">
+            <p>This website does not collect any personal data at all. It does <b>not</b> place any cookies. I try my best to keep this a safe space.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </div>
+  <!-- Footer -->
+  <div class="footer">
+    <div class="sepLine"></div>
+    <p>This website is maintained by Jonas Allgeier, who can be contacted by email (<a href="#" class="cryptedmail"
+     data-name="jonas.allgeier"
+     data-domain="bosscon"
+     data-tld="de"
+     id="email"
+     onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld + '?subject=About fpSimple&body=Hi Jonas,'; return false;"></a>). Last updated on 2022-07-19.</p>
+   </div>
+
+   <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      var panel = acc[i].nextElementSibling;
+      acc[i].onclick = function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      }
+    }
+
+    window.onload = setTimeout(function(){ acc[0].click(); acc[1].click() }, 650);
+
+    function resizeAccordion(acc) {  
+      for (i = 0; i < acc.length; i++) {
+        acc[i].click();
+        acc[i].click();
+      }
+    }
+
+    function initialState() {  
+      for (i = 0; i < acc.length; i++) {
+        if (i==0) {
+          if (!(acc[i].classList.contains("active"))) {
+            acc[i].click();
+          } 
+        } else {
+          if (acc[i].classList.contains("active")) {
+            acc[i].click();
+          }
+        }
+      }
+    }
+
+    var globalResizeTimer = null;
+
+    $(window).resize(function() {
+      if(globalResizeTimer != null) window.clearTimeout(globalResizeTimer);
+      globalResizeTimer = window.setTimeout(function() {
+        resizeAccordion(acc);
+      }, 200);
+    });
+
+  </script>
+
+</body>
+</html>
+
+
