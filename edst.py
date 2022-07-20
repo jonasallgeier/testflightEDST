@@ -38,7 +38,7 @@ cols = [
         TableColumn(field="methodName", title="Method"),
         TableColumn(field="applicable", title="Applicability",formatter=formatter),
     ]
-tab1 = DataTable(source=srcMethods, columns=cols,index_position=None,sizing_mode="stretch_width")
+tab1 = DataTable(source=srcMethods, columns=cols,index_position=None,sizing_mode="stretch_width",selectable=False)
 
 # define sliders for input
 sl1            = Slider(title="pH",start=6.0, end=8.5, value=7.2, step=0.1)
