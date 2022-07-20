@@ -29,7 +29,7 @@ template=["""<span style="font-weight: bold; color:<%=
                     else 
                         {return('#ba4d22')}
                     }()) %>;">
-                &#9608;
+                &#x2B24;
             </span>""" for i in range(3)]
 template = '\n'.join(template)
 
